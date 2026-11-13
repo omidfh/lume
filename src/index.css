@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* ☀️ LIGHT MODE (Default) */
+:root {
+  --surface: var(--color-p100); /* light bar/card background */
+  --surface2: var(--color-p10); /* light bar/card background */
+  --border: var(--color-p90); /* light line */
+  --text-muted: var(--color-p50); /* subtle text */
+  --bg-main: var(--color-p110); /* page background */
+  --text-main: var(--color-p); /* main text */
+  --text-main2: var(--color-p110); /* main text */
+  --bg-bg2: var(--color-newbg);
+}
+/* 🌙 DARK MODE (Automatically flips!) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-bg2: var(--color-newbg2);
+    --surface: var(--color-p10); /* dark bar/card background */
+    --surface2: var(--color-p100); /* dark bar/card background */
+    --border: var(--color-p20); /* dark line */
+    --text-muted: var(--color-p70); /* lighter subtle text for dark mode */
+    --bg-main: var(--color-p0); /* black page background */
+    --text-main: var(--color-p110); /* white main text */
+    --text-main2: var(--color-p); /* white main text */
+  }
+}
+
+@theme {
+  --font-headline: "Bodoni Moda", serif;
+  --font-body: "Hanken Grotesk", sans-serif;
+  --font-label: "Hanken Grotesk", sans-serif;
+
+  --color-surface: var(--surface);
+  --color-surface2: var(--surface2);
+  --color-border: var(--border);
+  --color-muted: var(--text-muted);
+  --color-main: var(--text-main);
+  --color-main2: var(--text-main2);
+  --color-canvas: var(--bg-main);
+  --color-bg2: var(--bg-bg2);
+
+  /* PRIMARY COLOR */
+  --color-p: #0a0a0a;
+  --color-p0: #000000;
+  --color-p10: #1c1b1b;
+  --color-p20: #313030;
+  --color-p30: #474646;
+  --color-p40: #5f5e5e;
+  --color-p50: #787776;
+  --color-p60: #929090;
+  --color-p70: #adabaa;
+  --color-p80: #c9c6c5;
+  --color-p90: #e5e2e1;
+  --color-p100: #f3f0ef;
+  --color-p110: #ffffff;
+  --color-newbg: #ece7de;
+
+  /* Secondary COLORS */
+  --color-s: #5a5a5a;
+  --color-s0: #000000;
+  --color-s10: #1b1c1c;
+  --color-s20: #303030;
+  --color-s30: #464747;
+  --color-s40: #5e5e5e;
+  --color-s50: #777777;
+  --color-s60: #919090;
+  --color-s70: #acabab;
+  --color-s80: #c7c6c6;
+  --color-s90: #e4e2e2;
+  --color-s100: #f2f0f0;
+  --color-s110: #ffffff;
+  --color-newbg2: #161616;
+}
+
+.bodoni-moda-font {
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
