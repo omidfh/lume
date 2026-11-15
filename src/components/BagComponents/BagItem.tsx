@@ -1,10 +1,15 @@
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { mockData } from "../../fakeData/data";
 import Divider from "../Divider";
+import type { Bag } from "../../types/bag";
 
-export default function BagItem(itemData) {
+interface ItemData {
+  itemData: Bag;
+}
+
+export default function BagItem({ itemData }: ItemData) {
   const productDetails = mockData.find(
-    (mockItem) => mockItem.id === itemData.itemData.id,
+    (mockItem) => mockItem.id === itemData.id,
   );
   return (
     <div className="flex flex-col gap-4">
@@ -28,19 +33,15 @@ export default function BagItem(itemData) {
                   style={{ backgroundColor: productDetails?.colorCode }}
                   className={`border border-main w-4 h-4 `}
                 ></div>
-                <p className="text-xs md:text-base">
-                  {itemData.itemData?.color}
-                </p>
+                <p className="text-xs md:text-base">{itemData?.color}</p>
               </div>
-              <p className="text-xs md:text-base">
-                SIZE [{itemData.itemData?.size}]
-              </p>
+              <p className="text-xs md:text-base">SIZE [{itemData?.size}]</p>
               <div className="flex justify-between w-[110px] border border-border gap-2 py-1 px-4">
                 <button className="text-center cursor-pointer text-xs md:text-sm">
                   <FaMinus />
                 </button>
                 <p className="text-md md:text-lg text-main">
-                  {itemData.itemData.quantity}
+                  {itemData.quantity}
                 </p>
                 <button className="text-center cursor-pointer text-xs md:text-sm">
                   <FaPlus />

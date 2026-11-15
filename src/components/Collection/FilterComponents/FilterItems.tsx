@@ -1,6 +1,12 @@
-import React from "react";
+import type { Product } from "../../../types/product";
 
-export default function FilterItems({ title, quantity, color = "" }) {
+interface FilterItemsTypes {
+  title: string;
+  quantity: Product[];
+  color?: string;
+}
+
+export default function FilterItems({ title, quantity }: FilterItemsTypes) {
   return (
     <div className="flex flex-col justify-evenly py-1 text-main">
       <div className="flex justify-between items-center">

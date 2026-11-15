@@ -1,6 +1,8 @@
-import React from "react";
-
-export default function CollectionHeader({ collectionView }) {
+export default function CollectionHeader({
+  collectionView,
+}: {
+  collectionView?: string;
+}) {
   return (
     <div className="flex flex-col items-center font-thin gap-8 text-muted tracking-[.2rem] text-center font-body">
       <p className="text-[.7rem] md:text-lg ">HAUTE COUTURE ÉDITIONS</p>

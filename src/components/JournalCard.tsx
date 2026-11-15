@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function JournalCard({ data }) {
   if (!data) return null;
   return (

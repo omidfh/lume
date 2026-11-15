@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function PriceFilter({ title }) {
+export default function PriceFilter({ title }: { title: string }) {
   return (
     <div className="flex flex-col justify-evenly py-1 text-main">
       <div className="flex justify-between items-center">

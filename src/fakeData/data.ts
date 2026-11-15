@@ -1,6 +1,7 @@
-import { SiX } from "react-icons/si";
+import type { Bag } from "../types/bag";
+import type { Product } from "../types/product";
 
-export const mockData = [
+export const mockData: Product[] = [
   {
     id: "p01",
     isFavorite: false,
@@ -32,7 +33,7 @@ export const mockData = [
       care: "Professional dry clean recommended",
       iron: "Low heat / gentle steam",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample1.jpg",
     allImages: [
       {
@@ -85,7 +86,7 @@ export const mockData = [
       care: "Professional dry clean recommended",
       iron: "Check garment label",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample2.jpg",
     allImages: [
       {
@@ -137,7 +138,7 @@ export const mockData = [
       care: "Hand wash cold with wool-safe detergent",
       iron: "Check garment label",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample3.jpg",
     allImages: [
       {
@@ -189,7 +190,7 @@ export const mockData = [
       care: "Hand wash cold with wool-safe detergent",
       iron: "Check garment label",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample5.jpg",
     allImages: [
       {
@@ -242,7 +243,7 @@ export const mockData = [
       care: "Professional dry clean only",
       iron: "Check garment label",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample6.jpg",
     allImages: [
       {
@@ -295,7 +296,7 @@ export const mockData = [
       care: "Professional dry clean recommended",
       iron: "Low heat / gentle steam",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample7.jpg",
     allImages: [
       {
@@ -348,7 +349,7 @@ export const mockData = [
       care: "Spot clean when possible",
       iron: "Low heat if permitted",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample8.jpg",
     allImages: [
       {
@@ -400,7 +401,7 @@ export const mockData = [
       care: "Hand wash cold with wool-safe detergent",
       iron: "Check garment label",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample9.jpg",
     allImages: [
       {
@@ -453,7 +454,7 @@ export const mockData = [
       care: "Professional dry clean only",
       iron: "Low heat / gentle steam",
     },
-    modelInfo: { heightCm: 179, wearingSize: "S" },
+
     image: "/assets/products/sample10.jpg",
     allImages: [
       {
@@ -505,7 +506,7 @@ export const mockData = [
       care: "Gentle machine wash cold or hand wash",
       iron: "Low heat if permitted",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample11.jpg",
     allImages: [
       {
@@ -557,7 +558,7 @@ export const mockData = [
       care: "Professional dry clean recommended",
       iron: "Gentle steam only",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample12.jpg",
     allImages: [
       {
@@ -610,7 +611,7 @@ export const mockData = [
       care: "Professional dry clean only",
       iron: "Check garment label",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample13.jpg",
     allImages: [
       {
@@ -662,7 +663,7 @@ export const mockData = [
       care: "Hand wash cold with cashmere-safe detergent",
       iron: "Check garment label",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample14.jpg",
     allImages: [
       {
@@ -714,7 +715,7 @@ export const mockData = [
       care: "Professional dry clean only",
       iron: "Check garment label",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample17.jpg",
     allImages: [
       {
@@ -766,7 +767,7 @@ export const mockData = [
       care: "Machine wash cold with similar colors",
       iron: "Low heat if permitted",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample18.jpg",
     allImages: [
       {
@@ -818,7 +819,7 @@ export const mockData = [
       care: "Hand wash cold with wool-safe detergent",
       iron: "Check garment label",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample3.jpg",
     allImages: [
       {
@@ -870,7 +871,7 @@ export const mockData = [
       care: "Hand wash cold with wool-safe detergent",
       iron: "Check garment label",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample5.jpg",
     allImages: [
       {
@@ -923,7 +924,7 @@ export const mockData = [
       care: "Professional dry clean only",
       iron: "Check garment label",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample6.jpg",
     allImages: [
       {
@@ -976,7 +977,7 @@ export const mockData = [
       care: "Professional dry clean recommended",
       iron: "Low heat / gentle steam",
     },
-    modelInfo: null,
+
     image: "/assets/products/sample7.jpg",
     allImages: [
       {
@@ -1000,7 +1001,7 @@ export const mockData = [
   },
 ];
 
-export const fakeBagData = [
+export const fakeBagData: Bag[] = [
   { id: "p04", quantity: 1, size: "M", color: "Charcoal" },
   { id: "p02", quantity: 1, size: "S", color: "Beige" },
   { id: "p10", quantity: 1, size: "L", color: "Cream" },

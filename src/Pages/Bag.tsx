@@ -12,6 +12,8 @@ export default function Bag() {
     .flatMap((item) => mockData.filter((mockItem) => mockItem.id === item.id))
     .reduce((acc, item) => acc + item.price, 0);
 
+  console.log(fakeBagData);
+
   return (
     <div className="flex flex-col gap-4 text-main font-body tracking-[.2rem]">
       <div className="flex justify-center">

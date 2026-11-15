@@ -1,5 +1,3 @@
-import React from "react";
-
 import { GrAppsRounded } from "react-icons/gr";
 
 import { RiHomeLine } from "react-icons/ri";

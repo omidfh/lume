@@ -1,4 +1,3 @@
-import React from "react";
 import heroImage3 from "../../assets/heroImage3.jpg";
 import mobileHero2 from "../../assets/mobileHero2.jpg";
 import { IoIosArrowRoundForward } from "react-icons/io";

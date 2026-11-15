@@ -1,11 +1,18 @@
-import { VscSettings } from "react-icons/vsc";
+import type { ProductTileView } from "../../Pages/Collection";
+
+interface SortAndViewItems {
+  productAmount: number | string;
+  tileView: ProductTileView[];
+  tileHandler: (value: number) => void;
+  modalHandler: (action: boolean) => void;
+}
 
 export default function SortAndView({
   productAmount,
   tileView,
   tileHandler,
   modalHandler,
-}) {
+}: SortAndViewItems) {
   return (
     <div className="flex w-full flex-row uppercase justify-between tracking-[.2rem] font-thin  py-4 md:py-8 md:px-4 px-0 border-0 md:border md:border-border backdrop:none md:backdrop-brightness-105 font-body">
       <div className="w-1/3">
@@ -17,7 +24,6 @@ export default function SortAndView({
           className="flex md:hidden items-center gap-2 text-sm"
           onClick={() => modalHandler(true)}
         >
-          <VscSettings />
           <p className="">Filters</p>
         </button>
       </div>

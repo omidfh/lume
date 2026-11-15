@@ -1,4 +1,3 @@
-import React from "react";
 import MainHeader from "./HeaderComponents/MainHeader";
 
 export default function Header() {

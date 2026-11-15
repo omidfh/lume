@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Communication() {
   return (
     <div className="bg-bg2 flex -mx-10 w-[calc(100%+5rem)] md:-mx-12 md:w-[calc(100%+6rem)] overflow-hidden justify-center items-center py-16 px-5 md:px-12">

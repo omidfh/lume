@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import JournalCard from "../JournalCard";
 import { journalData } from "../../fakeData/journalData";

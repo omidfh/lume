@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import Divider from "../Divider";
+import type { JournalPost } from "../../types/journal";
 
-export default function ExpandAria({ content }) {
+export default function ExpandAria({ content }: { content: JournalPost }) {
   const [isOpen, setIsOpen] = useState(false);
   const iconClasses = {
     opened: `absolute text-xs transition-all duration-300 ease-in-out ${

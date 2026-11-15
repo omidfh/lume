@@ -8,6 +8,11 @@ import { useState, useMemo } from "react";
 import ModalComponent from "../components/ModalComponent";
 import ProductCountAndMore from "../components/Collection/ProductCountAndMore";
 
+export interface ProductTileView {
+  value: number;
+  active: boolean;
+}
+
 export default function Collection() {
   const [activeCols, setActiveCols] = useState(4);
   const [modalOpened, setModalOpened] = useState(false);
@@ -16,7 +21,7 @@ export default function Collection() {
   const visibleProducts = mockData.slice(0, productAmountShow);
   const shownCount = visibleProducts.length;
 
-  function handleShowMoreProduct(amount) {
+  function handleShowMoreProduct(amount: number) {
     if (productAmountShow + amount >= mockData.length) {
       setProductAmountShow(mockData.length);
     } else {
@@ -27,12 +32,12 @@ export default function Collection() {
   const progress =
     mockData.length > 0 ? (shownCount / mockData.length) * 100 : 0;
 
-  function modalHandler(action: boolean) {
+  function modalHandler(action: boolean): void {
     setModalOpened(action);
   }
 
   // useMemo computes the tile array whenever activeCols changes
-  const productViewTile = useMemo(
+  const productViewTile: ProductTileView[] = useMemo(
     () => [
       { value: 4, active: activeCols === 4 },
       { value: 2, active: activeCols === 2 },
@@ -40,7 +45,7 @@ export default function Collection() {
     [activeCols],
   );
 
-  const tileViewHandle = (view) => {
+  const tileViewHandle = (view: number) => {
     setActiveCols(view);
   };
 

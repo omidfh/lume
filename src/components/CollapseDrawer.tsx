@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 
-export default function CollapseDrawer({ children, name, mode }) {
+interface CollapseDrawerItems {
+  children: React.ReactNode;
+  name: string;
+  mode: string;
+}
+
+export default function CollapseDrawer({
+  children,
+  name,
+  mode,
+}: CollapseDrawerItems) {
   const [isOpen, setIsOpen] = useState(false);
   const iconClasses = {
     opened: `absolute text-xs transition-all duration-300 ease-in-out ${

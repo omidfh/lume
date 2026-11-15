@@ -5,9 +5,13 @@ import FilterItems from "./FilterComponents/FilterItems";
 import FilterSize from "./FilterComponents/FilterSize";
 import PriceFilter from "./FilterComponents/PriceFilter";
 import { productSizes } from "../../tools/ProductSizes";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import type { Prices } from "../../types/product";
 
-export default function FilterProduct({ closeModal }) {
+export default function FilterProduct({
+  closeModal,
+}: {
+  closeModal: (action: boolean) => void;
+}) {
   const categories = [...new Set(mockData.map((item) => item.category))];
   const colors = [
     ...new Map(
@@ -18,7 +22,7 @@ export default function FilterProduct({ closeModal }) {
     ).values(),
   ];
 
-  const prices = ["$200 - $400", "$400 - $600", "$600 +"];
+  const prices: Prices = ["$200 - $400", "$400 - $600", "$600 +"];
   const filterData = [
     {
       title: "category",
@@ -39,7 +43,6 @@ export default function FilterProduct({ closeModal }) {
         <FilterItems
           key={item.name}
           title={item.name}
-          color={item.color}
           quantity={mockData.filter((color) => color.colors[0] === item.name)}
         />
       )),

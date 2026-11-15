@@ -1,7 +1,14 @@
 import { AiOutlineClose } from "react-icons/ai";
-import { SlClose } from "react-icons/sl";
 
-export default function ModalComponent({ children, close }) {
+interface ModalComponentItems {
+  children: React.ReactNode;
+  close: (action: boolean) => void;
+}
+
+export default function ModalComponent({
+  children,
+  close,
+}: ModalComponentItems) {
   return (
     <div
       onClick={(event) => {

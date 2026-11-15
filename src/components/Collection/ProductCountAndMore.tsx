@@ -1,11 +1,16 @@
-import React from "react";
+interface ProductCountAndMoreItems {
+  shownCount: number;
+  mockDataLength: number;
+  progress: number;
+  handleShowMoreProduct: (count: number) => void;
+}
 
 export default function ProductCountAndMore({
   shownCount,
   mockDataLength,
   progress,
   handleShowMoreProduct,
-}) {
+}: ProductCountAndMoreItems) {
   return (
     <div className="flex flex-col w-[80%] md:w-1/5 gap-4 justify-center">
       <p className=" tracking-[.2rem] text-center font-body text-muted text-sm uppercase">

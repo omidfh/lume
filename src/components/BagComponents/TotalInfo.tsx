@@ -1,8 +1,9 @@
-import React from "react";
 import Divider from "../Divider";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
-export default function TotalInfo({ totalPrice }) {
+export type TotalPrice = number | string;
+
+export default function TotalInfo({ totalPrice }: { totalPrice: TotalPrice }) {
   return (
     <div className="flex flex-col gap-6 items-center md:items-start p-8 bg-bg2 text-main w-full md:w-1/3 h-fit font-extralight">
       <p className="text-lg font-medium">ORDER SUMMARY</p>

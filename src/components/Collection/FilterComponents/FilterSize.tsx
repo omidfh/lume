@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import type { ProductSize } from "../../../types/productSizeType";
 
-export default function FilterSize({ data }) {
+export default function FilterSize({ data }: { data: ProductSize[] }) {
   return (
     <div className="flex w-full flex-row items-center gap-2  overflow-x-auto scroll-smooth  py-4 my-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden text-main">
       {data.map((item, i) => (

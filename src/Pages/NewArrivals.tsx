@@ -14,7 +14,7 @@ export default function NewArrivals() {
   const visibleProducts = newData.slice(0, productAmountShow);
   const shownCount = visibleProducts.length;
 
-  function handleShowMoreProduct(amount) {
+  function handleShowMoreProduct(amount: number) {
     if (productAmountShow + amount >= newData.length) {
       setProductAmountShow(newData.length);
     } else {
@@ -33,7 +33,7 @@ export default function NewArrivals() {
     [activeCols],
   );
 
-  const tileViewHandle = (view) => {
+  const tileViewHandle = (view: number) => {
     setActiveCols(view);
   };
 

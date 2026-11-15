@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function UpperHeader() {
   return (
     <div className="hidden md:flex flex flex-row justify-between bg-surface px-1 py-2 border-b border-border text-muted ">

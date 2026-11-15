@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function FooterMain() {
   return (
     <div className="flex w-full text-main justify-between py-16 uppercase">

@@ -1,4 +1,6 @@
-export const productSizes = [
+import type { ProductSize } from "../types/productSizeType";
+
+export const productSizes: ProductSize[] = [
   { name: "xs", value: 0, europeValue: 34 },
   { name: "s", value: 1, europeValue: 36 },
   { name: "m", value: 2, europeValue: 38 },
