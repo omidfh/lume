@@ -1,4 +1,3 @@
-import React from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import { fakeBagData, mockData } from "../fakeData/data";
 import Divider from "../components/Divider";

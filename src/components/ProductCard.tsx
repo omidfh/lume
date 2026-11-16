@@ -1,7 +1,16 @@
 import { ImHeart } from "react-icons/im";
 import { SlHeart } from "react-icons/sl";
+import type { Product } from "../types/product";
 
-export default function ProductCard({ data, fullWidth = false }) {
+interface ProductCardItems {
+  data: Product;
+  fullWidth?: boolean;
+}
+
+export default function ProductCard({
+  data,
+  fullWidth = false,
+}: ProductCardItems) {
   return (
     <a
       href={`/collection/${data.id}`}

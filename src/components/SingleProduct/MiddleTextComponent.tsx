@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function MiddleTextComponent() {
   return (
     <div className=" flex-col hidden md:flex py-12 justify-center items-center gap-6 bg-bg2 text-main w-full font-body font-extralight">

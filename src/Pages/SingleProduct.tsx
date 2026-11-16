@@ -10,6 +10,10 @@ export default function SingleProduct() {
   const productId = pathname.split("/").at(-1);
   const productDetails = mockData.find((item) => item.id === productId);
 
+  if (!productDetails) {
+    return <p className="text-main">Product not found.</p>;
+  }
+
   return (
     <div className=":flex flex-col gap-12 text-main tracking-[.2rem]">
       <div className="flex flex-col md:flex-row gap-6 justify-between w-full font-body text-main tracking-[.2rem]">

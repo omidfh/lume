@@ -1,10 +1,9 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import MobileHeader from "./components/MobileHeader";
-import UpperHeader from "./components/HeaderComponents/UpperHeader";
 import FooterMain from "./components/Footer/FooterMain";
 import MobileItems from "./components/MobileItems";
+import UpperHeader from "./components/HeaderComponents/UpperHeader";
 
 export default function MainLayout() {
   return (

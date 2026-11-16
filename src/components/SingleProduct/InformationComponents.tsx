@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import BreadCrumb from "../BreadCrumb";
 import { productSizes } from "../../tools/ProductSizes";
 import { SlHeart } from "react-icons/sl";
 import { BsTruck } from "react-icons/bs";
-import CollapseDrawer from "../CollapseDrawer";
 import CollapsedInfo from "./CollapsedInfo";
+import type { ImagesComponentsItems } from "./ImagesComponents";
+import type { Size } from "../../types/product";
 
-export default function InformationComponents({ productDetails, pathName }) {
+export default function InformationComponents({
+  productDetails,
+  pathName,
+}: ImagesComponentsItems) {
   const [selectedColor, setSelectedColor] = useState(productDetails.colors[0]);
   const [selectedSize, setSelectedSize] = useState(productDetails.sizes[0]);
 
@@ -14,7 +18,7 @@ export default function InformationComponents({ productDetails, pathName }) {
     setSelectedColor(color);
   }
 
-  function handleSizeSelect(size: string) {
+  function handleSizeSelect(size: Size) {
     setSelectedSize(size);
   }
 

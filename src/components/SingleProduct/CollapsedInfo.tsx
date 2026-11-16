@@ -1,7 +1,11 @@
-import React from "react";
+import type { Product } from "../../types/product";
 import CollapseDrawer from "../CollapseDrawer";
 
-export default function CollapsedInfo({ productDetails }) {
+export default function CollapsedInfo({
+  productDetails,
+}: {
+  productDetails: Product;
+}) {
   const infoData = [
     {
       name: "description",

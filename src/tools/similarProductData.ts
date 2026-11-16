@@ -1,7 +1,8 @@
 import { mockData } from "../fakeData/data";
+import type { Product } from "../types/product";
 
-export function similarProductData(productDetails) {
-  const { id, category, gender, colorway } = productDetails;
+export function similarProductData(productDetails: Product) {
+  const { id, category, gender } = productDetails;
   const productList = [];
 
   productList.push(

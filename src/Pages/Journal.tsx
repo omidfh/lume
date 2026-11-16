@@ -1,4 +1,3 @@
-import React from "react";
 import BreadCrumb from "../components/BreadCrumb";
 import { journalData } from "../fakeData/journalData";
 import ExpandAria from "../components/jornalComponents/ExpandAria";

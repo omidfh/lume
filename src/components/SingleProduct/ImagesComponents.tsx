@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import BreadCrumb from "../BreadCrumb";
+import type { Product } from "../../types/product";
 
-export default function ImagesComponents({ productDetails, pathName }) {
+export interface ImagesComponentsItems {
+  productDetails: Product;
+  pathName: string;
+}
+
+export default function ImagesComponents({
+  productDetails,
+  pathName,
+}: ImagesComponentsItems) {
   const [selectedPhoto, setSelectedPhoto] = useState(
     productDetails?.image || productDetails?.allImages[0].src,
   );
 
-  function handleSelectPhoto(imageSrc) {
+  function handleSelectPhoto(imageSrc: string) {
     setSelectedPhoto(imageSrc);
   }
   return (

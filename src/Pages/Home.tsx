@@ -1,5 +1,3 @@
-import React from "react";
-
 import HomeHeroBanner from "../components/Home/HomeHeroBanner";
 import HomeTextContent from "../components/Home/HomeTextContent";
 import NewArrivals from "../components/Home/NewArrivals";

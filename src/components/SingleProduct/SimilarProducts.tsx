@@ -1,9 +1,14 @@
-import React from "react";
 import ProductCard from "../ProductCard";
-import { mockData } from "../../fakeData/data";
 import { similarProductData } from "../../tools/similarProductData";
+import type { Product } from "../../types/product";
 
-export default function SimilarProducts({ productDetails }) {
+export interface SimilarProductsItems {
+  productDetails: Product;
+}
+
+export default function SimilarProducts({
+  productDetails,
+}: SimilarProductsItems) {
   return (
     <div className="flex flex-col w-full  gap-6 text-main">
       <div className="flex justify-between items-end">

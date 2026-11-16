@@ -10,7 +10,7 @@ export default function MobileItems() {
         <div className="flex flex-col justify-center items-center gap-2">
           <RiHomeLine className="text-[1.4rem]" />
           <a href="/" className="text-[.7rem] tracking-widest font-thin">
-            Atelier
+            Home
           </a>
         </div>
         <div className="flex flex-col justify-center items-center gap-2">
@@ -24,16 +24,13 @@ export default function MobileItems() {
         </div>
         <div className="flex flex-col justify-center items-center gap-2">
           <SlHeart className="text-[1.4rem]" />
-          <a
-            href="/favorites"
-            className="text-[.7rem] tracking-widest font-thin"
-          >
+          <a href="/saved" className="text-[.7rem] tracking-widest font-thin">
             Saved
           </a>
         </div>
         <div className="flex flex-col justify-center items-center gap-2">
           <SlBag className="text-[1.4rem]" />
-          <a href="/cart" className="text-[.7rem] tracking-widest font-thin">
+          <a href="/bag" className="text-[.7rem] tracking-widest font-thin">
             Bag
           </a>
         </div>

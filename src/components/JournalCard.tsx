@@ -1,4 +1,6 @@
-export default function JournalCard({ data }) {
+import type { JournalPost } from "../types/journal";
+
+export default function JournalCard({ data }: { data: JournalPost }) {
   if (!data) return null;
   return (
     <div className="flex flex-col shrink-0 snap-start w-[280px] sm:w-[360px] md:w-[440px] cursor-pointer hover:opacity-80 gap-2">

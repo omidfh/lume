@@ -19,27 +19,16 @@ export default function FooterMain() {
 
       {/* //*Collection */}
       <div className="flex flex-col font-thin text-md tracking-[.3rem] gap-3">
-        <a href="#" className="font-bold">
+        <a href="/collection" className="font-bold">
           COLLECTION
         </a>
-        <a href="#">Outerwear</a>
-        <a href="#">Tailored Suiting</a>
-        <a href="#">Silk & Dresses</a>
-        <a href="#">Knitwear</a>
-        <a href="#">Leather Goods</a>
+        <a href="/collection">Outerwear</a>
+        <a href="/collection">Tailored Suiting</a>
+        <a href="/collection">Silk & Dresses</a>
+        <a href="/collection">Knitwear</a>
+        <a href="/collection">Leather Goods</a>
       </div>
-      {/* //*ATELIER */}
-      <div className="flex flex-col font-thin text-md tracking-[.3rem] gap-3">
-        <a href="#" className="font-bold">
-          ATELIER
-        </a>
-        <a href="#">Private Fittings</a>
-        <a href="#">Maison Locations</a>
-        <a href="#">Archival Provenance</a>
-        <a href="#">Care & Restoration</a>
-        <a href="#">Sustainability Code</a>
-      </div>
-      {/* //*ASSISTANCE */}
+
       <div className="flex flex-col font-thin text-md tracking-[.3rem] gap-3">
         <a href="#" className="font-bold">
           ASSISTANCE
