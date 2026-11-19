@@ -6,6 +6,8 @@ import { BsTruck } from "react-icons/bs";
 import CollapsedInfo from "./CollapsedInfo";
 import type { ImagesComponentsItems } from "./ImagesComponents";
 import type { Size } from "../../types/product";
+import { useBag } from "../../store/cartStore";
+import toast from "react-hot-toast";
 
 export default function InformationComponents({
   productDetails,
@@ -13,6 +15,7 @@ export default function InformationComponents({
 }: ImagesComponentsItems) {
   const [selectedColor, setSelectedColor] = useState(productDetails.colors[0]);
   const [selectedSize, setSelectedSize] = useState(productDetails.sizes[0]);
+  const addToBag = useBag((state) => state.addItem);
 
   function handleColorSelect(color: string) {
     setSelectedColor(color);
@@ -20,6 +23,17 @@ export default function InformationComponents({
 
   function handleSizeSelect(size: Size) {
     setSelectedSize(size);
+  }
+
+  function handleAddToBag() {
+    const itemDataForBag = {
+      id: productDetails.id,
+      quantity: 1,
+      size: selectedSize,
+      color: selectedColor,
+    };
+    addToBag(itemDataForBag);
+    toast.success("Item Added to Bag");
   }
 
   return (
@@ -93,7 +107,10 @@ export default function InformationComponents({
         </div>
       </div>
       <div className="flex gap-2 justify-between w-full">
-        <button className="text-sm md:text-lg py-2 md:py-4 grow uppercase bg-surface2 text-main2 hover:bg-surface hover:text-main hover:border transition-all duration-150 ease-in-out cursor-pointer ">
+        <button
+          onClick={() => handleAddToBag()}
+          className="text-sm md:text-lg py-2 md:py-4 grow uppercase bg-surface2 text-main2 hover:bg-surface hover:text-main hover:border transition-all duration-150 ease-in-out cursor-pointer "
+        >
           Add to bag
         </button>
         <button className=" flex justify-center items-center w-10 h-10 md:w-20 md:h-20 border shrink-0 hover:bg-surface2 hover:text-main2 transition-all duration-150 ease-in-out cursor-pointer">

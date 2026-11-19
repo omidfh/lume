@@ -2,15 +2,36 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 import { mockData } from "../../fakeData/data";
 import Divider from "../Divider";
 import type { Bag } from "../../types/bag";
+import { useBag } from "../../store/cartStore";
+import toast from "react-hot-toast";
 
 interface ItemData {
   itemData: Bag;
 }
 
 export default function BagItem({ itemData }: ItemData) {
+  const removeItemFunction = useBag((state) => state.removeItem);
+  const itemIncrease = useBag((state) => state.addQuantityToItem);
+  const itemDecrease = useBag((state) => state.reduceItemQuantity);
+
   const productDetails = mockData.find(
     (mockItem) => mockItem.id === itemData.id,
   );
+
+  function handleRemoveItem() {
+    removeItemFunction(itemData);
+    toast.success("Item Removed");
+  }
+  function handleIncreaseItem() {
+    itemIncrease(itemData);
+    toast.success("Item Quantity Increased");
+  }
+  function handleDecreaseItem() {
+    if (itemData.quantity <= 1) removeItemFunction(itemData);
+    else itemDecrease(itemData);
+    toast.success("Item Quantity Decreased");
+  }
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-between gap-2 items-center md:items-start">
@@ -37,18 +58,27 @@ export default function BagItem({ itemData }: ItemData) {
               </div>
               <p className="text-xs md:text-base">SIZE [{itemData?.size}]</p>
               <div className="flex justify-between w-[110px] border border-border gap-2 py-1 px-4">
-                <button className="text-center cursor-pointer text-xs md:text-sm">
+                <button
+                  onClick={handleDecreaseItem}
+                  className="text-center cursor-pointer text-xs md:text-sm"
+                >
                   <FaMinus />
                 </button>
                 <p className="text-md md:text-lg text-main">
                   {itemData.quantity}
                 </p>
-                <button className="text-center cursor-pointer text-xs md:text-sm">
+                <button
+                  onClick={handleIncreaseItem}
+                  className="text-center cursor-pointer text-xs md:text-sm"
+                >
                   <FaPlus />
                 </button>
               </div>
             </div>
-            <button className="underline underline-offset-4 uppercase text-xs md:text-base">
+            <button
+              onClick={() => handleRemoveItem()}
+              className="underline cursor-pointer underline-offset-4 uppercase text-xs md:text-base"
+            >
               Remove
             </button>
           </div>

@@ -1,10 +1,12 @@
 import { SlBag, SlHeart } from "react-icons/sl";
 import routes from "../../routes/routes";
 import { fakeBagData, mockData } from "../../fakeData/data";
+import { useBag } from "../../store/cartStore";
 
 export default function MainHeader() {
   const path = window.location.pathname;
   const savedCount = mockData.filter((item) => !!item.isFavorite);
+  const bagItems = useBag((state) => state.items);
 
   return (
     <div className="flex justify-between bg-bg-main py-2 text-main w-full h-full items-center ">
@@ -56,7 +58,7 @@ export default function MainHeader() {
             } flex  md:gap-2 cursor-pointer items-center text-muted w-1/3`}
           >
             <SlBag />
-            <p>BAG [ {fakeBagData.length} ]</p>
+            <p>BAG [ {bagItems.length} ]</p>
           </a>
         </div>
       </div>
