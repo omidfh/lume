@@ -1,6 +1,9 @@
 import { ImHeart } from "react-icons/im";
 import { SlHeart } from "react-icons/sl";
 import type { Product } from "../types/product";
+import { useSaved } from "../store/savedStore";
+import toast from "react-hot-toast";
+import type { MouseEvent } from "react";
 
 interface ProductCardItems {
   data: Product;
@@ -11,6 +14,22 @@ export default function ProductCard({
   data,
   fullWidth = false,
 }: ProductCardItems) {
+  const isSaved = useSaved((state) =>
+    state.items.some((item) => item.id === data.id),
+  );
+  const addToSaved = useSaved((state) => state.addItem);
+  const removeFromSaved = useSaved((state) => state.removeItem);
+
+  function handleAddToSaved(e: MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
+    if (isSaved) {
+      removeFromSaved(data);
+      toast.success("Item Removed From Saved");
+    } else {
+      addToSaved(data);
+      toast.success("Item Added to Saved");
+    }
+  }
   return (
     <a
       href={`/collection/${data.id}`}
@@ -30,11 +49,11 @@ export default function ProductCard({
 
         <button
           onClick={(e) => {
-            e.preventDefault();
+            handleAddToSaved(e);
           }}
           className="cursor-pointer absolute flex justify-center items-center md:top-2 right-2 bottom-2 w-8 h-8  md:w-12 md:h-12  bg-surface text-main tracking-wider uppercase"
         >
-          {data.isFavorite ? (
+          {isSaved ? (
             <ImHeart className="text-md md:text-xl" />
           ) : (
             <SlHeart className="text-md md:text-xl" />

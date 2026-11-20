@@ -8,6 +8,7 @@ import type { ImagesComponentsItems } from "./ImagesComponents";
 import type { Size } from "../../types/product";
 import { useBag } from "../../store/cartStore";
 import toast from "react-hot-toast";
+import { useSaved } from "../../store/savedStore";
 
 export default function InformationComponents({
   productDetails,
@@ -16,6 +17,23 @@ export default function InformationComponents({
   const [selectedColor, setSelectedColor] = useState(productDetails.colors[0]);
   const [selectedSize, setSelectedSize] = useState(productDetails.sizes[0]);
   const addToBag = useBag((state) => state.addItem);
+
+  const isSaved = useSaved((state) =>
+    state.items.some((item) => item.id === productDetails.id),
+  );
+
+  const addToSaved = useSaved((state) => state.addItem);
+  const removeFromSaved = useSaved((state) => state.removeItem);
+
+  function handleAddToSaved() {
+    if (isSaved) {
+      removeFromSaved(productDetails);
+      toast.success("Item Removed From Saved");
+    } else {
+      addToSaved(productDetails);
+      toast.success("Item Added to Saved");
+    }
+  }
 
   function handleColorSelect(color: string) {
     setSelectedColor(color);
@@ -113,7 +131,10 @@ export default function InformationComponents({
         >
           Add to bag
         </button>
-        <button className=" flex justify-center items-center w-10 h-10 md:w-20 md:h-20 border shrink-0 hover:bg-surface2 hover:text-main2 transition-all duration-150 ease-in-out cursor-pointer">
+        <button
+          onClick={handleAddToSaved}
+          className={` flex justify-center items-center w-10 h-10 md:w-20 md:h-20 border shrink-0 ${isSaved ? "bg-surface2 text-main2 hover:bg-surface hover:text-main" : "hover:bg-surface2 hover:text-main2"} hover:bg-surface2 hover:text-main2 transition-all duration-150 ease-in-out cursor-pointer`}
+        >
           <SlHeart className="flex text-md md:text-xl" />
         </button>
       </div>
